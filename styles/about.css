@@ -1,0 +1,35 @@
+/*
+    FLOAT
+    float: left shifts the figure to one side and takes it out of normal
+    flow; the line boxes of following text shorten to wrap around it.
+    The figure is deliberately taller than all the text, so the footer's
+    clear: both is visible: without it, the footer would slide up and sit
+    beside the float; with it, the footer starts below the figure's bottom.
+*/
+  body {
+      --figure-width: 11rem;
+      --figure-height: 24rem;
+
+      max-width: var(--measure);
+      margin-inline: auto;
+      padding: var(--space-3);
+
+      article {
+        figure {
+          float: left;
+          width: var(--figure-width);
+          min-height: var(--figure-height);
+          margin: 0 var(--space-2) var(--space-1) 0;
+          padding: var(--space-2);
+          border: var(--border);
+          background: var(--panel);
+        }
+      }
+
+      > footer {
+        clear: both;
+        padding: var(--space-2);
+        border-block-start: var(--rule);
+        background: var(--panel);
+      }
+    }

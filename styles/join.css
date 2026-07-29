@@ -1,0 +1,41 @@
+body{
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+}
+
+header{
+    padding: var(--space-2) var(--space-3);
+    border-block-end: var(--border);
+    background: var(--panel);
+}
+
+main{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-3);
+}
+
+footer{
+    padding: var(--space-2) var(--space-3);
+    border-block-start: var(--border);
+    background: var(--panel);
+}
+
+main form{
+    max-width: 28rem;
+    padding: var(--space-3);
+    border: var(--border);
+    border-block-start: var(--rule);
+    background: var(--panel);
+}
+
+
+
+
+     
+
+      
