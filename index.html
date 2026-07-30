@@ -1,80 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Home of CSE Cheese Society">
-  <title>Home</title>
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/site.css">
-  <link rel="stylesheet" href="styles/index.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Giselle Mendoza's home page for personal site">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="winter.css">
+    <noscript>
+      <style>
+        header nav { display: block !important; position: static !important; }
+        .menu-toggle { display: none !important; }
+      </style>
+      </noscript>
+  </head>
 
-<body>
-  <header>
-    <img src="images/logo.svg" alt="Cheese Society logo" width="40" height="40">
-    <h1>Home</h1>
+  <body>
+    <header>
+      <img src="butterf.png" alt="butterfly for logo" width="150" height="150">
 
-    <fieldset id="theme-picker" hidden>
-      <legend>Theme</legend>
-      <label><input type="radio" name="theme" value="light"> Light</label>
-      <label><input type="radio" name="theme" value="dark"> Dark</label>
-      <label><input type="radio" name="theme" value="auto"> Auto</label>
-    </fieldset>
-  </header>
+      <!-- js -->
+      <button class="menu-toggle" aria-label="Open navigation menu">
+        ☰
+      </button>
 
-  <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="guide/index.html">Guide</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="join.html">Join</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <h2>Welcome to The Cheese Society</h2>
-    <p>The CSE Cheese Society was founded in 2024, when a seminar ended
-        early and a cheese plate did not. What began as an argument over the
-        last piece of Comte became a weekly meeting, a shared spreadsheet of
-        tasting notes, and eventually a constitution written on a napkin. The
-        napkin has since been laminated.
-    </p>
-
-    <p>Our mission is simple: taste widely, take notes, and never let
-        processed cheese food into the building. We host monthly tastings,
-        maintain the Short Guide to Cheese, and elect a Cheese of the Month
-        by ranked-choice ballot. Election disputes are settled by blind
-        tasting.
-    </p>
-    <p>The Society is open to all students, staff, and the lactose-curious.
-        No experience required. Strong opinions optional but traditional.
-    </p>
-
-    <button commandfor="cheese-fact" command="toggle-popover">cheese fact</button>
-    <div id="cheese-fact" popover>
-        <p>Did you know? Those crunchy specks in aged Gouda and Parmigiano are 
-            tyrosine and calcium lactate crystals — a sign of long, honest aging, 
-            not salt.</p>
-    </div>
-  </main>
-
-  <aside>
-    <h2>Cheese of the Month</h2>
-    <img src="images/cheese-fresh.svg" alt="Fresh Cheese Image" width="100">
-    <p>Young, moist, and mild. Fresh cheeses skip aging entirely: the curds
-        are drained, maybe lightly salted, and sent straight to the table.
-        They taste of milk itself, which is the whole point.
-    </p>
-    <p>Character: soft, spreadable or springy, high in moisture. Flavors are
-        delicate — milky, lemony, faintly sweet. There is nowhere for a flaw
-        to hide, so freshness is everything.
-    </p>
-  </aside>
-
-  <footer>
-    <p>&copy; 2026 CSE Cheese Society</p>
-  </footer>
-</body>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="experiments.html">Experiments</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section id="home">
+        <h1>Giselle Mendoza</h1>
+        <p>Computer Engineering student at UC San Diego.Through my coursework and projects, 
+          I've had the opportunity to explore many areas of engineering. Along the way, I've 
+          discovered that I'm most interested in embedded systems and software engineering. 
+          I'm especially passionate about the connection between hardware and software. I 
+          hope to pursue a career in those fields where I can contribute to innovation.
+        </p>
+        <figure>
+          <img src="giselle.JPG" alt="Giselle Mendoza" width="500" height="500">
+        </figure>
+      </section>
+    </main>
+    
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="https://linkedin.com/in/giselle-mendoza">LinkedIn</a></li>
+          <li><a href="mailto:g1mendoza@ucsd.edu">Email</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2026 Giselle Mendoza.</p>
+    </footer>
+    <script src="jas.js"></script>
+  </body>
 </html>

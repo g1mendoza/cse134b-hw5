@@ -1,0 +1,357 @@
+/* ==========================================================================
+   Giselle Mendoza — Personal Site
+   Aesthetic: Pink
+========================================================================== */
+
+:root {
+  /* Color palette */
+  --color-white: #fdfbf9;
+  --color-blush-deep: #e3aebd;
+  --color-mist: #f2e6ef; 
+  --color-plum: #4a3350;
+  --color-text: #4a3b47;
+
+  /* Typography */
+  --font-heading: "Parisienne", cursive;
+  --font-body: "Quicksand", "Segoe UI", sans-serif;
+
+  /*Sizes*/
+  --text-lg: 1.25rem;
+  --text-xl: clamp(2.25rem, 6vw, 3.75rem);
+
+  /* Spacing */
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+
+  /* Effects */
+  --radius-soft: 2rem;
+  --radius-frame: 55% 45% 52% 48% / 48% 52% 45% 55%;
+  --shadow-frost: 0 12px 32px -14px rgba(54, 38, 52, 0.3);
+
+  --border-ribbon: 2px solid var(--color-blush-deep);
+  --border-thin: 1px solid var(--color-plum);
+}
+
+/*Global*/
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-white);
+
+  background-image:
+    radial-gradient(circle at 12% 15%, rgba(243, 217, 224, 0.55), transparent 42%),
+    radial-gradient(circle at 88% 80%, rgba(231, 222, 250, 0.5), transparent 45%),
+    radial-gradient(circle at 50% 0%, rgba(234, 241, 245, 0.7), transparent 55%);
+  
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);  /*set font*/
+  font-weight: 600;  /* bold the text */
+  color: var(--color-plum); /* set text color to plum */
+  line-height: 1.15; /* liens close together */
+  margin-top: 0; /* removes the default heading */
+}
+
+/* all links get color plum and 
+remove default underline from it*/
+a {
+  color: var(--color-plum);
+  text-decoration: none;
+}
+
+/* keyboard-focus indicator — only shows when focus comes from Tab/keyboard
+   navigation (not mouse clicks), restyled to fit the aesthetic instead of
+   the browser's default blue outline */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-plum);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* turns off visual movemnt/transitions*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* Header */
+header {
+  background-color: var(--color-mist); /* background of header */
+  border-block-end: var(--border-thin); /* thin line under header */
+  padding: var(--space-md) var(--space-lg); /* extra space in header */
+  display: flex; /* header to flexible box */ 
+  align-items: center; /* set items to center align */
+}
+
+header img {
+  width: 4rem; 
+  height: 4rem;
+  border-radius: 50%;
+}
+
+/* sets header to far right align */
+header nav {
+  margin-inline-start: auto;
+}
+
+header ul {
+  list-style: none;  /* removes dots/number from list items */
+  display: flex;     /* places items side by side(flexible box) */
+  flex-wrap: wrap;   /* when screen small items moves */
+  gap: var(--space-md) var(--space-lg);  /* space between the items first-row second-col */
+  margin: 0; /*removed default*/
+  padding: 0; /*removed default*/
+}
+
+header a {
+  color: var(--color-plum); /*set text color */
+  font-weight: 600; /* bold the text */
+  font-size: 1.15rem; /* increse text by 15% */
+  letter-spacing: 0.02em; /*sets letter spacing*/
+  padding-bottom: 2px; /* set bottom border*/
+  border-block-end: 2px dashed transparent; /* add hidden(to set up for hover) dashed bottom line */
+  transition: border-color 0.2s ease, color 0.2s ease; /*smooths changes over 0.2 secs for a hover effect*/
+}  
+
+/*finds links that have the accessibility tag,
+and says which link matches the page the user is watching */
+header a[aria-current="page"]{
+  color: var(--color-blush-deep); /*changes tecxt color of active link*/
+  border-block-end-color: var(--color-blush-deep); /*changes the color of the bottom dashed line */
+}
+
+/* header a means any link insde the header
+:hover means that the style will apply when mouse is over link
+:not([aria-current="page"]) excludes link that have that attribtue
+*/
+header a:hover:not([aria-current="page"]){
+  color: var(--color-blush-deep); /*changes tecxt color of active link*/
+  border-block-end-color: var(--color-blush-deep); /*changes the color of the bottom dashed line */
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  display: none; /* hides menu button */
+  margin-left: auto; /* moves buttom all the way to right */
+  background: none; /* removebackground name*/
+  border: none;  /* remove border or outlien of the button*/
+  font-size: 2rem; /*  increase text */
+  color: var(--color-plum); /*set button color*/
+  cursor: pointer;  /* change curser to hand pointer */
+}
+
+/* this will be applied when screen is 800px wide*/
+@media (max-width: 800px) {
+
+  /*change header layout*/
+  header {
+    position: relative;
+  } 
+
+  /*makes menu icon visible*/
+  .menu-toggle {
+    display: block;
+  }
+  
+  header nav {
+    display: none; /*hide desktop navigation lsit */
+    position: absolute; /* navigation menu layout to float*/
+    top: 100%; /*set the menu bottom edge of header*/
+    right: 1rem; /*mnu to right side of screen*/
+    
+    background: var(--color-mist); /* set menu color*/
+    padding: var(--space-md); /*add space in menu*/
+    
+    border-radius: var(--radius-soft); /* croudn corner of menu box*/
+    box-shadow: var(--shadow-frost); /* add shadow under menu for flaot illusion*/
+    border: var(--border-thin); /*add border under box*/
+  }
+  
+  /*overrides the dispay none rule so 
+  when JS adds class open to nav the menu is visible*/
+  header nav.open {
+    display: block;
+  }
+  
+  /*list of links inside of navigation menu*/
+  header nav ul {
+    flex-direction: column; /*turn layout to a vertical stack*/
+    gap: var(--space-sm); /* add small spacce in the vertical list */
+  }
+}
+
+/* main */
+main {
+
+  /*elements with id=home*/
+    #home {
+      display: grid; /*set section to a grid container*/
+      grid-template-columns: 1fr; /* sets one column to take up all width*/
+      gap: var(--space-lg); /* sets large space between grid items*/
+      max-width: 75rem; /* sets section to max px*/
+      margin: 0 auto;  /*set section horizontally*/
+      padding: var(--space-xl) var(--space-md); /*add xlarge padding on top and bottom and medium on side*/
+
+      /* this will be applied when screen is 700px wide*/
+      @media (min-width: 700px) {
+        grid-template-columns: 1fr 2fr;  /*set grid to two columns: right 2x the left*/
+        column-gap: var(--space-xl); /*add extra large horizontal gap between columns*/
+        row-gap: var(--space-md);  /*add medium vertical gap between row*/
+        align-items: start; /*align content to top of gird so it doesnt stretch vertically*/
+      }
+
+      > p { /*targets only the paragraph child inside #home*/
+        font-size: var(--text-lg); /*makes font large*/
+        max-width: 42rem; /*gives liens a max width*/
+        margin-top: 0; /*removes default space above the paragraph*/
+        margin-bottom: var(--space-sm); /*add s small gap below */
+
+        /* this will be applied when screen is 700px wide*/
+        @media (min-width: 700px) {
+          grid-column: 1; /*forces paragraph to sit in the first lect column*/
+        }
+      }
+
+      h1 { /*targets only the main header inside #home*/
+        color: var(--color-blush-deep); /*set color*/
+        font-size: var(--text-xl); /* set text extra large*/
+        font-style: italic; /*italicized text*/
+        margin-bottom: var(--space-sm); /*add small gap under title*/
+        text-align: center; /*cetner text horizontally*/
+
+        /* this will be applied when screen is 700px wide*/
+        @media (min-width: 700px) {
+          grid-column: 2; /*forces title into the second right column*/
+        }
+      }
+
+      figure { /*targets the img inside #home*/
+        margin: 0; /*removed margins */
+        text-align: center; /*cetner img horizontally*/
+        justify-self: center; /*cetner container inside its grid block*/
+
+        /* this will be applied when screen is 700px wide*/
+        @media (min-width: 700px) {
+          grid-column: 2; /*forces img into second right column*/
+        }
+
+        img { /*targets the img inside #home*/
+          width: min(90%, 560px); /*set img size to 90% of the screen width and caps max at 560px*/
+          aspect-ratio: 1 / 1;  /*forces img to remain a square*/
+          margin-inline: auto;  /*chesk img block cnters itself*/
+          object-fit: cover; /*crops img inside the square aspect ration without stretching*/
+          border-radius: var(--radius-frame); /*applied custom roudned frame shape to corners*/
+          box-shadow: var(--shadow-frost);  /*gives img a subtle sofrt drop shadow*/
+          border: var(--border-ribbon); /* adds a thin desing border around img edges*/
+          transition: border-radius 0.6s ease; /*smoothlt animate croner shape over 0.6 secs when it changes*/
+        }
+
+        /*detects when a user mouse hover over the gigure box*/
+        &:hover img {
+          border-radius: var(--radius-soft); /*smoothly transitions the img corner into a standard soft roudner rectangle*/
+        }
+      }
+    }
+}
+
+/* Shared page layout */
+.page-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* Shared page title */
+.page-section > h1 {
+  flex-basis: 100%;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-blush-deep);
+  margin: 0 0 var(--space-lg);
+}
+
+/* Shared cards */
+.card {
+  position: relative;
+  flex: 1 1 100%;
+  background-color: var(--color-mist);
+  padding: var(--space-lg);
+  border-radius: var(--radius-soft);
+  border-left: 6px solid var(--color-blush-deep);
+  box-shadow: var(--shadow-frost);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px -16px rgba(54, 38, 52, 0.35);
+}
+
+.card::before {
+  content: "⚙";
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: var(--color-blush-deep);
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-mist); /*set footer backgorund*/
+  border-block-start: var(--border-thin); /*add a thin border line ontop of footer*/
+  padding: var(--space-lg) var(--space-md); /* add a large space isnde top/bottom and medium space left/right*/
+  text-align: center; /*cetner all text */
+  
+  nav ul { /*targets unorder lsit in the footer */
+    list-style: none; /*removed buttet poitns from list*/
+    display: flex; /*turn list into flexbox to line up them horizontally*/
+    justify-content: center; /*ceters the list items horixontally on the screen*/
+    gap: var(--space-md); /* places a medium gap between navigation link */
+    padding: 0; /*removes default browser padding from list*/
+    margin: 0 0 var(--space-sm) 0; /*sets zero margin on top left and right with small margin */
+  }
+
+  nav a { /*target links inside footer navigation*/
+    font-weight: 600; /*bold text*/
+    border-block-end: 2px dashed transparent; /*adds dashed line under text*/
+    transition: border-color 0.2s ease; /* smoothly fade color of text over 0.2 seconds*/
+
+    &:hover { /*targets link when user moves their mosue cursor*/
+      border-block-end-color: var(--color-blush-deep); /* makes dashed line appear */
+      color: var(--color-blush-deep); /* changes color */
+    }
+  }
+
+  p {
+    margin: 0; /*removes default spcaing*/
+    color: var(--color-plum); /*sets color*/
+    font-size: 0.9rem; /* makes text smaller*/
+  }
+}

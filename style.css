@@ -1,0 +1,25 @@
+header,
+nav,
+main,
+footer,
+section,
+article,
+form,
+fieldset {
+  border: 1px solid #f1d4ff;
+}
+
+/* 
+Custom Element #1:
+skill-tag is a semantic CSS custom element.
+*/
+skill-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  border: 2px solid #cf8cc3;
+  border-radius: 999px;
+  background-color: #9e6ca1;
+  color: black;
+  font-weight: bold;
+}

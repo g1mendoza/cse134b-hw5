@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiments | My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    canvas {
+      border: 5px solid #d4a5d9;
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <noscript>
+    <p>This page uses a small amount of JavaScript for the canvas drawing 
+      and custom elements. Please enable JavaScript to see the full experience.</p>
+  </noscript>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="experiments">
+      <h1>Experimental Tags and Custom Elements</h1>
+      
+      <section>
+        <h2>Audio</h2>
+        <audio controls>
+          <source src="Waves Crashing on Rock Beach.mp3" type="audio/mpeg">
+          <source src="demo-audio.ogg" type="audio/ogg">
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <section>
+        <h2>Video</h2>
+        <video controls width="300" height="300">
+          <source src="IMG_1332.mp4" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+      </section>
+
+      <section>
+        <h2>Custom Elements</h2>
+        <!-- Custom Element #1: Semantic CSS custom element -->
+        <skill-tag>MATLAB</skill-tag>
+        <skill-tag>C/C++</skill-tag>
+        <skill-tag>SystemVerilog</skill-tag>
+
+        <!-- Custom Element #2: Prints "Hello World!" to the browser console -->
+        <console-greet></console-greet>
+      </section>
+
+      <section>
+        <h2>Template</h2>
+        <template id="project-card-template">
+          <article>
+            <h3>Project Title</h3>
+            <p>Project description.</p>
+          </article>
+        </template>
+      </section>
+
+      <section>
+        <h2>Canvas</h2>
+        <canvas id="canvas" width="200" height="200">
+          Your browser does not support the canvas element.
+        </canvas>
+        <script>
+          const canvas = document.getElementById("canvas");
+          const ctx = canvas.getContext("2d");
+          ctx.fillStyle = "pink";
+          ctx.beginPath();
+          ctx.arc(50, 50, 25, 0, 2 * Math.PI);
+          ctx.fill();
+        </script>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="https://linkedin.com/in/giselle-mendoza">LinkedIn</a></li>
+        <li><a href="mailto:g1mendoza@ucsd.edu">Email</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 Giselle Mendoza.</p>
+  </footer>
+</body>
+</html>
