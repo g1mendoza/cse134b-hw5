@@ -3,7 +3,6 @@
   Page: Contact
 */
 
-/* Center the whole section's content */
 #contact {
   display: flex;
   flex-direction: column;
@@ -18,7 +17,7 @@
   margin-bottom: var(--space-lg);
 }
 
-/* Contact links laid out as a centered row of little boxes */
+/* my contact links as a centered row of mult boxes */
 .contact-links {
   list-style: none;
   display: flex;
@@ -54,7 +53,7 @@
   color: var(--color-blush-deep);
 }
 
-/* The message form */
+/* message form */
 #contact form {
   width: 100%;
 }

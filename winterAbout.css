@@ -1,0 +1,117 @@
+/*
+  Giselle Mendoza — Personal Site
+  Page: About
+*/
+
+#about {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-xl);
+  align-items: start;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* Title — left column, top */
+#about > h1 {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-blush-deep);
+  margin: 0 0 var(--space-lg);
+}
+
+/* Photo — left column, under the title */
+#about > img {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+  max-width: 20rem;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-soft);
+  box-shadow: var(--shadow-frost);
+  border: var(--border-ribbon);
+  justify-self: center;
+  position: sticky;
+  top: var(--space-lg);
+}
+
+/* Every nested section becomes a card with hover movement */
+#about > section {
+  background-color: var(--color-mist);
+  border-radius: var(--radius-soft);
+  border-left: 6px solid var(--color-blush-deep);
+  box-shadow: var(--shadow-frost);
+  padding: var(--space-lg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about > section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px -16px rgba(54, 38, 52, 0.35);
+}
+
+#about > section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+}
+
+#about > section p {
+  margin: 0 0 var(--space-sm);
+  line-height: 1.6;
+}
+
+#about > section ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+#about > section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* All four cards stack in the right column, in order, starting at row 1 */
+#about > section:nth-of-type(1) {
+  grid-column: 2;
+  grid-row: 1;
+}
+#about > section:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+}
+#about > section:nth-of-type(3) {
+  grid-column: 2;
+  grid-row: 3;
+}
+#about > section:nth-of-type(4) {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+@media (max-width: 48rem) {
+  #about {
+    grid-template-columns: 1fr;
+  }
+  #about > h1,
+  #about > img {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
+  }
+  #about > img {
+    margin: 0 auto var(--space-lg);
+  }
+  #about > section:nth-of-type(1),
+  #about > section:nth-of-type(2),
+  #about > section:nth-of-type(3),
+  #about > section:nth-of-type(4) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}

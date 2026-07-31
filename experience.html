@@ -2,8 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Giselle Mendoza's experince page for personal site">
+  <script>
+    {
+      try {
+        const t = localStorage.getItem("theme-preference");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch { }
+    }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <title>Experience | My Portfolio</title>
   <link rel="stylesheet" href="winter.css">
@@ -15,14 +25,14 @@
       </style>
   </noscript>
 </head>
+
 <body>
   <header>
     <img src="butterf.png" alt="butterfly for logo" width="150" height="150">
+    <button class="menu-toggle" aria-label="Open navigation menu">
+      ☰
+    </button>
 
-     <!-- js -->
-      <button class="menu-toggle" aria-label="Open navigation menu">
-        ☰
-      </button>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -33,6 +43,15 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    
+    <fieldset id="theme-picker" hidden>
+      <legend>Theme</legend>
+      <div>
+        <button type="button" value="light" aria-pressed="false">Light</button>
+        <button type="button" value="dark" aria-pressed="false">Dark</button>
+        <button type="button" value="auto" aria-pressed="false">Auto</button>
+      </div>
+    </fieldset>
   </header>
 
   <main>
@@ -109,5 +128,6 @@
     <p>&copy; 2026 Giselle Mendoza.</p>
   </footer>
   <script src="jas.js"></script>
+  <script type="module" src="theme.js"></script>
 </body>
 </html>
