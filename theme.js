@@ -3,7 +3,7 @@ const STORAGE_KEY = "theme-chosen";
 const root = document.documentElement;  //root element
 const fieldset = document.getElementById("theme-picker"); //reference to fieldset id elemwnt
 
-//read saved theme return it or null to stop code crash
+//read saved theme: return it or null to stop code crash
 const safeGet = () => {
   try {
     return localStorage.getItem(STORAGE_KEY);
@@ -14,7 +14,7 @@ const safeGet = () => {
   }
 };
 
-//write theme it
+//write theme 
 const safeSet = (value) => {
   try {
     localStorage.setItem(STORAGE_KEY, value);

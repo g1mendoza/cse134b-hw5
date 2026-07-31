@@ -1,0 +1,113 @@
+/*
+  Giselle Mendoza — Personal Site
+  Page: Contact
+*/
+
+/* Center the whole section's content */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+#contact h1 {
+  margin-bottom: var(--space-lg);
+}
+
+/* Contact links laid out as a centered row of little boxes */
+.contact-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+}
+
+.contact-links li {
+  background-color: var(--color-mist);
+  border: var(--border-thin);
+  border-radius: var(--radius-soft);
+  box-shadow: var(--shadow-frost);
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-links li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px -16px rgba(54, 38, 52, 0.35);
+}
+
+.contact-links a {
+  color: var(--color-plum);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  color: var(--color-blush-deep);
+}
+
+/* The message form */
+#contact form {
+  width: 100%;
+}
+
+#contact fieldset {
+  border: var(--border-thin);
+  border-radius: var(--radius-soft);
+  padding: var(--space-lg);
+  background-color: var(--color-mist);
+  box-shadow: var(--shadow-frost);
+}
+
+#contact legend {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-plum);
+  padding: 0 var(--space-sm);
+}
+
+#contact label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-plum);
+  margin-top: var(--space-sm);
+  margin-bottom: 0.25rem;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: var(--border-thin);
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+
+#contact button[type="submit"] {
+  margin-top: var(--space-sm);
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--color-blush-deep);
+  color: var(--color-white);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#contact dialog {
+  border: var(--border-thin);
+  border-radius: var(--radius-soft);
+  box-shadow: var(--shadow-frost);
+  padding: var(--space-lg);
+  text-align: center;
+}

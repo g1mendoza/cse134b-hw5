@@ -2,10 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact page for Giselle Mendoza's personal site">
+  <script>
+    {
+      try {
+        const t = localStorage.getItem("theme-preference");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch { }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <title>Contact | My Portfolio</title>
+  <link rel="stylesheet" href="winter.css">
+  <link rel="stylesheet" href="winterContact.css">
+  <noscript>
+    <style>
+    header nav { display: block !important; position: static !important; }
+    .menu-toggle { display: none !important; }
+    </style>
+  </noscript>
 </head>
+
 <body>
   <header>
+    <img src="butterf.png" alt="butterfly for logo" width="150" height="150">
+    <!-- js -->
+    <button class="menu-toggle" aria-label="Open navigation menu">
+      ☰
+    </button>
+    
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -16,17 +44,26 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-  </header>
+    
+    <fieldset id="theme-picker" hidden>
+      <legend>Theme</legend>
+      <div>
+        <button type="button" value="light" aria-pressed="false">Light</button>
+        <button type="button" value="dark" aria-pressed="false">Dark</button>
+        <button type="button" value="auto" aria-pressed="false">Auto</button>
+      </div>
+    </fieldset>
+    </header>
 
- <main>
+  <main>
     <section id="contact">
       <h1>Contact Me</h1>
-      <p>
-        School Email: <a href="mailto:g1mendoza@ucsd.edu">g1mendoza@ucsd.edu</a><br>
-        Personal Email: <a href="mailto:gis.mendoza04@gmail.com">gis.mendoza04@gmail.com</a><br>
-        LinkedIn: <a href="https://linkedin.com/in/giselle-mendoza">linkedin.com/in/giselle-mendoza</a><br>
-        GitHub: <a href="https://github.com/g1mendoza">github.com/g1mendoza</a>
-      </p>
+      <ul class="contact-links">
+        <li><a href="mailto:g1mendoza@ucsd.edu">School Email</a></li>
+        <li><a href="mailto:gis.mendoza04@gmail.com">Personal Email</a></li>
+        <li><a href="https://linkedin.com/in/giselle-mendoza">LinkedIn</a></li>
+        <li><a href="https://github.com/g1mendoza">GitHub</a></li>
+      </ul>
 
       <form action="#" method="post">
         <fieldset>
@@ -45,7 +82,7 @@
         </fieldset>
       </form>
 
-      <dialog open>
+      <dialog>
         <p>Thanks for reaching out!</p>
         <button type="button">Close</button>
       </dialog>
@@ -61,5 +98,7 @@
     </nav>
     <p>&copy; 2026 Giselle Mendoza.</p>
   </footer>
+  <script src="jas.js"></script>
+  <script type="module" src="theme.js"></script>
 </body>
 </html>
