@@ -4,6 +4,9 @@
 ========================================================================== */
 
 :root {
+  /* modes */
+  color-scheme: light dark;
+
   /* Color palette */
   --color-white: #fdfbf9;
   --color-blush-deep: #e3aebd;
@@ -75,9 +78,6 @@ a {
   text-decoration: none;
 }
 
-/* keyboard-focus indicator — only shows when focus comes from Tab/keyboard
-   navigation (not mouse clicks), restyled to fit the aesthetic instead of
-   the browser's default blue outline */
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--color-plum);
@@ -110,6 +110,28 @@ header img {
 /* sets header to far right align */
 header nav {
   margin-inline-start: auto;
+}
+
+#theme-picker {
+  border: none;
+  padding: 0;
+  margin-block: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+#theme-picker legend {
+  padding: 0;
+  font-weight: 600;
+  color: var(--color-plum);
+  text-align: center;
+}
+
+#theme-picker div {
+  display: flex;
+  gap: var(--space-sm);
 }
 
 header ul {
@@ -354,4 +376,35 @@ footer {
     color: var(--color-plum); /*sets color*/
     font-size: 0.9rem; /* makes text smaller*/
   }
+}
+
+ /* device on dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-white: #201a1e;
+    --color-blush-deep: #e3aebd;
+    --color-mist: #2e232b;
+    --color-plum: #f2d9e6;
+    --color-text: #e8dde3;
+    --shadow-frost: 0 12px 32px -14px rgba(0, 0, 0, 0.6);
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-white: #fdfbf9;
+  --color-blush-deep: #e3aebd;
+  --color-mist: #f2e6ef;
+  --color-plum: #4a3350;
+  --color-text: #4a3b47;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-white: #201a1e;
+  --color-blush-deep: #e3aebd;
+  --color-mist: #2e232b;
+  --color-plum: #f2d9e6;
+  --color-text: #e8dde3;
+  --shadow-frost: 0 12px 32px -14px rgba(0, 0, 0, 0.6);
 }

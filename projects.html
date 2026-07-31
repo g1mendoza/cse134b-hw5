@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Giselle Mendoza's work and teaching experience">
+  <script>
+  {
+    try {
+      const t = localStorage.getItem("theme-preference");
+      if (t === "light" || t === "dark") {
+        document.documentElement.setAttribute("data-theme", t);
+      }
+    } catch {}
+  }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <title>Projects | My Portfolio</title>
   <link rel="stylesheet" href="winter.css">
@@ -32,6 +42,14 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <fieldset id="theme-picker" hidden>
+        <legend>Theme</legend>
+        <div>
+          <button type="button" value="light" aria-pressed="false">Light</button>
+          <button type="button" value="dark" aria-pressed="false">Dark</button>
+          <button type="button" value="auto" aria-pressed="false">Auto</button>
+        </div>
+      </fieldset>
   </header>
 
   <main>
@@ -142,5 +160,6 @@
     <p>&copy; 2026 Giselle Mendoza.</p>
   </footer>
   <script src="jas.js"></script>
+  <script type="module" src="theme.js"></script>  </body>
 </body>
 </html>
