@@ -2,25 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Giselle Mendoza's About page for personal site">
+  <script>
+    {
+      try {
+        const t = localStorage.getItem("theme-preference");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch { }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <title>Experiments | My Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="winter.css">
+  <link rel="stylesheet" href="winterExperiments.css">
   <style>
     canvas {
       border: 5px solid #d4a5d9;
     }
   </style>
   <script src="script.js" defer></script>
+  <noscript>
+      <style>
+        header nav { display: block !important; position: static !important; }
+        .menu-toggle { display: none !important; }
+      </style>
+  </noscript>
 </head>
 
 <body>
-  <noscript>
-    <p>This page uses a small amount of JavaScript for the canvas drawing 
-      and custom elements. Please enable JavaScript to see the full experience.</p>
-  </noscript>
-
   <header>
-    <nav>
+    <img src="butterf.png" alt="butterfly for logo" width="150" height="150">
+    <button class="menu-toggle" aria-label="Open navigation menu">
+      ☰
+   </button>
+   <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -30,12 +49,25 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    
+    <fieldset id="theme-picker" hidden>
+      <legend>Theme</legend>
+      <div>
+        <button type="button" value="light" aria-pressed="false">Light</button>
+        <button type="button" value="dark" aria-pressed="false">Dark</button>
+        <button type="button" value="auto" aria-pressed="false">Auto</button>
+      </div>
+    </fieldset>
   </header>
+  <noscript>
+    <p>This page uses a small amount of JavaScript for the canvas drawing 
+      and custom elements. Please enable JavaScript to see the full experience.</p>
+  </noscript>
+
 
   <main>
     <section id="experiments">
       <h1>Experimental Tags and Custom Elements</h1>
-      
       <section>
         <h2>Audio</h2>
         <audio controls>
@@ -100,5 +132,7 @@
     </nav>
     <p>&copy; 2026 Giselle Mendoza.</p>
   </footer>
+  <script src="jas.js"></script>
+  <script type="module" src="theme.js"></script>
 </body>
 </html>
