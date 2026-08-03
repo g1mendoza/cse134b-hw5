@@ -1,0 +1,127 @@
+---
+layout: base.njk
+title: Experiments
+description: Eperiments page hw2 and hw5
+css: winterExperiments.css
+---
+
+<style>
+  canvas {
+    border: 5px solid #d4a5d9;
+  }
+</style>
+
+<noscript>
+  <p>
+    This page uses a small amount of JavaScript for the canvas drawing 
+    and custom elements. Please enable JavaScript to see the full experience.
+  </p>
+</noscript>
+
+<section id="experiments">
+  <h1>Experimental Tags and Custom Elements</h1>
+  <!-- Homework 5 -->
+  <section id="hw5-tanning">
+    <h2>HW5: Tanning Opportunity</h2>
+    <p class="section-note">
+      Live Temperature and UV index.
+    </p>
+    <template id="tanning-template">
+      <article class="tanning-card">
+        <header>
+          <h3>
+            <span data-location></span> Tanning
+          </h3>
+        </header>
+        <h4>Hourly Forecast</h4>
+        <ul class="tanning-hourly" data-hourly-list></ul>
+        <p class="tanning-current">
+          Right now:
+          <span data-current-temp></span>°F · UV
+          <span data-current-uv></span>
+          (<span data-uv-label></span>)
+        </p>
+        <p class="tanning-verdict" data-verdict></p>
+        <p class="tanning-attribution">
+          Weather data:
+          <a href="https://open-meteo.com/">
+            Open-Meteo.com
+          </a>
+        </p>
+      </article>
+    </template>
+    <tanning-opportunity location="San Diego">
+      <p>
+        Live weather is unavailable right now. Check
+        <a href="https://forecast.weather.gov/MapClick.php?lat=32.7157&lon=-117.1611">
+          the National Weather Service forecast for San Diego
+        </a>
+        instead.
+      </p>
+    </tanning-opportunity>
+  </section>
+
+  <section>
+    <h2>Audio</h2>
+    <audio controls>
+      <source src="/Waves Crashing on Rock Beach.mp3" type="audio/mpeg">
+      <source src="/demo-audio.ogg" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <section>
+    <h2>Video</h2>
+    <video controls width="300" height="300">
+      <source src="/IMG_1332.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+  </section>
+
+  <section>
+    <h2>Custom Elements</h2>
+    <!-- Custom Element #1 -->
+    <skill-tag>
+      MATLAB
+    </skill-tag>
+    <skill-tag>
+      C/C++
+    </skill-tag>
+    <skill-tag>
+      SystemVerilog
+    </skill-tag>
+    <!-- Custom Element #2 -->
+    <console-greet></console-greet>
+  </section>
+
+  <section>
+    <h2>Template</h2>
+    <template id="project-card-template">
+      <article>
+        <h3>
+          Project Title
+        </h3>
+        <p>
+          Project description.
+        </p>
+      </article>
+    </template>
+  </section>
+
+  <section>
+    <h2>Canvas</h2>
+    <canvas id="canvas" width="200" height="200">
+      Your browser does not support the canvas element.
+    </canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "pink";
+      ctx.beginPath();
+      ctx.arc(50, 50, 25, 0, 2 * Math.PI);
+      ctx.fill();
+    </script>
+  </section>
+  
+</section>
+<script src="/tanning-widget.js" defer></script>

@@ -1,14 +1,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-  {{ title }} | {{ site.title }}
-</title>
+<title>{{ title }} | Giselle Mendoza</title>
 
 <meta name="description" content="{{ description }}">
 
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/winter.css">
+
+{% if css %}
+<link rel="stylesheet" href="/{{ css }}">
+{% endif %}
 
 <script src="/script.js" defer></script>
 <script src="/jas.js" defer></script>
