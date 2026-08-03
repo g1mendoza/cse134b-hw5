@@ -7,9 +7,13 @@
   max-width: 75rem;
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
 }
 
 #experiments > h1 {
+  grid-column: 1 / -1;
   text-align: center;
   font-size: clamp(2.5rem, 5vw, 4rem);
   color: var(--color-blush-deep);
@@ -17,12 +21,6 @@
 }
 
 #experiments > section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-}
-
-#experiments > section > section {
   background-color: var(--color-mist);
   border-radius: var(--radius-soft);
   border-left: 6px solid var(--color-blush-deep);
@@ -31,7 +29,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#experiments > section > section:hover {
+#experiments > section:hover {
   transform: translateY(-8px);
   box-shadow: 0 18px 40px -16px rgba(54, 38, 52, 0.35);
 }
@@ -41,6 +39,12 @@
   font-size: 1.5rem;
   margin-top: 0;
   margin-bottom: var(--space-sm);
+  color: var(--color-plum);
+}
+
+#hw5-tanning h2 {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
   color: var(--color-plum);
 }
 
@@ -56,8 +60,121 @@
   margin: 0.25rem 0.35rem 0.25rem 0;
 }
 
+/* HW5 Tanning Opportunity */
+.tanning-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.tanning-card header h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+  color: var(--color-plum);
+}
+
+.tanning-verdict {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-blush-deep);
+}
+
+.tanning-current {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.tanning-card h4 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin: var(--space-sm) 0 0.25rem;
+  color: var(--color-plum);
+}
+
+.tanning-hourly {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tanning-hourly li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--color-blush-deep);
+}
+
+.tanning-hourly li:last-child {
+  border-bottom: none;
+}
+
+.hour-time {
+  font-weight: 600;
+  color: var(--color-plum);
+  flex: 0 0 3.5rem;
+}
+
+.hour-temp {
+  flex: 1;
+  text-align: center;
+}
+
+.hour-uv {
+  flex: 0 0 5rem;
+  text-align: right;
+  color: var(--color-text);
+}
+
+.tanning-attribution {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.8rem;
+  color: var(--color-text);
+}
+
+.tanning-attribution a {
+  color: var(--color-plum);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-blush-deep);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tanning-attribution a:hover {
+  color: var(--color-blush-deep);
+  border-bottom-color: var(--color-blush-deep);
+}
+
+.tanning-loading {
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.tanning-error {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.tanning-error button {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--color-blush-deep);
+  color: var(--color-white);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+tanning-opportunity[state="loading"] {
+  opacity: 0.7;
+}
+
+
 @media (max-width: 48rem) {
-  #experiments > section {
+  #experiments {
     grid-template-columns: 1fr;
   }
 }

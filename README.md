@@ -16,3 +16,5 @@ If you completed the extra credit(describe in a short paragraph how Pagefind wor
     1. What gets built
     2. Roughly how large the index is on your site
     3. Why it needs no search server.
+
+Briefly explain the injection risk in your README.

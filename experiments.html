@@ -16,7 +16,7 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <title>Experiments | My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+ <!-- <link rel="stylesheet" href="style.css"> -->
   <link rel="stylesheet" href="winter.css">
   <link rel="stylesheet" href="winterExperiments.css">
   <style>
@@ -64,10 +64,38 @@
       and custom elements. Please enable JavaScript to see the full experience.</p>
   </noscript>
 
-
   <main>
     <section id="experiments">
       <h1>Experimental Tags and Custom Elements</h1>
+
+      <!-- Homework 5 -->
+      <section id="hw5-tanning">
+        <h2>HW5: Tanning Opportunity</h2>
+        <p class="section-note"> Live Temperature and UV index.</p>
+        <template id="tanning-template">
+          <article class="tanning-card">
+            <header>
+              <h3><span data-location></span> Tanning</h3>
+            </header>
+            <h4>Hourly Forecast</h4>
+            <ul class="tanning-hourly" data-hourly-list></ul>
+            <p class="tanning-current">
+              Right now: <span data-current-temp></span>°F · UV <span data-current-uv></span> (<span data-uv-label></span>)
+            </p>
+            <p class="tanning-verdict" data-verdict></p>
+            <p class="tanning-attribution">
+              Weather data: <a href="https://open-meteo.com/">Open-Meteo.com</a>
+            </p>
+          </article>
+        </template>
+        <tanning-opportunity location="San Diego">
+          <p>Live weather is unavailable right now. Check
+            <a href="https://forecast.weather.gov/MapClick.php?lat=32.7157&lon=-117.1611">
+              the National Weather Service forecast for San Diego</a> instead.
+          </p>
+        </tanning-opportunity>
+      </section>
+
       <section>
         <h2>Audio</h2>
         <audio controls>
@@ -76,7 +104,6 @@
           Your browser does not support the audio element.
         </audio>
       </section>
-
       <section>
         <h2>Video</h2>
         <video controls width="300" height="300">
@@ -84,7 +111,6 @@
           Your browser does not support the video element.
         </video>
       </section>
-
       <section>
         <h2>Custom Elements</h2>
         <!-- Custom Element #1: Semantic CSS custom element -->
@@ -95,7 +121,6 @@
         <!-- Custom Element #2: Prints "Hello World!" to the browser console -->
         <console-greet></console-greet>
       </section>
-
       <section>
         <h2>Template</h2>
         <template id="project-card-template">
@@ -105,7 +130,6 @@
           </article>
         </template>
       </section>
-
       <section>
         <h2>Canvas</h2>
         <canvas id="canvas" width="200" height="200">
@@ -122,7 +146,6 @@
       </section>
     </section>
   </main>
-
   <footer>
     <nav>
       <ul>
@@ -134,5 +157,6 @@
   </footer>
   <script src="jas.js"></script>
   <script type="module" src="theme.js"></script>
+  <script src="tanning-widget.js" defer></script>
 </body>
 </html>
