@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Brain Buddies",
+    "description": "An interactive project designed to support learning through technology.",
+    "role": "Software Developer",
+    "technologies": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ]
+  },
+  {
+    "title": "Embedded Systems Projects",
+    "description": "Hardware and software projects using microcontrollers, sensors, and custom circuits.",
+    "role": "Embedded Developer",
+    "technologies": [
+      "C++",
+      "ESP32",
+      "Circuit Design"
+    ]
+  },
+  {
+    "title": "Portfolio Website",
+    "description": "A personal portfolio website built with HTML, CSS, JavaScript, and Eleventy.",
+    "role": "Web Developer",
+    "technologies": [
+      "Eleventy",
+      "Nunjucks",
+      "CSS"
+    ]
+  }
+]

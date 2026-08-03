@@ -1,0 +1,42 @@
+<header>
+  <img src="/butterf.png" alt="butterfly for logo" width="150" height="150">
+
+  <button class="menu-toggle" aria-label="Open navigation menu">
+    ☰
+  </button>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      {% for item in site.nav %}
+      <li>
+        <a href="{{ item.url }}"
+          {% if page.url == item.url %}
+          aria-current="page"
+          {% endif %}
+        >
+          {{ item.name }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <fieldset id="theme-picker" hidden>
+    <legend>Theme</legend>
+
+    <div>
+      <button type="button" value="light" aria-pressed="false">
+        Light
+      </button>
+
+      <button type="button" value="dark" aria-pressed="false">
+        Dark
+      </button>
+
+      <button type="button" value="auto" aria-pressed="false">
+        Auto
+      </button>
+    </div>
+  </fieldset>
+
+</header>

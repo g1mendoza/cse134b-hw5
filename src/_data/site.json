@@ -1,0 +1,43 @@
+{
+  "title": "Giselle Mendoza",
+  "author": "Giselle Mendoza",
+  "year": "2026",
+
+  "nav": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About",
+      "url": "/about/"
+    },
+    {
+      "name": "Projects",
+      "url": "/projects/"
+    },
+    {
+      "name": "Experience",
+      "url": "/experience/"
+    },
+    {
+      "name": "Experiments",
+      "url": "/experiments/"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact/"
+    }
+  ],
+
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/g1mendoza"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/"
+    }
+  ]
+}

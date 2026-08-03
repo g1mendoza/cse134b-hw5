@@ -1,0 +1,17 @@
+<footer>
+  <p>
+    © {{ site.year }} {{ site.author }}
+  </p>
+
+  <nav aria-label="Social links">
+    <ul>
+      {% for social in site.socials %}
+      <li>
+        <a href="{{ social.url }}">
+          {{ social.name }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</footer>
