@@ -4,8 +4,8 @@
   "description": "Includes a short reference for your web component: 1. the tag name 2. each supported attribute with its default and accepted values 3. the endpoint used 4. one usage example Treat it as if another developer will drop your element into their page.",
   "main": "jas.js",
   "scripts": {
-     "start": "eleventy --serve",
-     "build": "eleventy"
+    "start": "eleventy --serve",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/g1mendoza/cse134b-hw5#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6"
+    "@11ty/eleventy": "^3.1.6",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0"
   }
 }
